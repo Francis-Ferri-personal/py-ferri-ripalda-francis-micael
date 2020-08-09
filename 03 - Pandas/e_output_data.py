@@ -81,7 +81,20 @@ formato_artistas = {
 hoja_artistas.conditional_format(rango_celdas, formato_artistas)
 hoja_artistas.conditional_format(rango_celdas_c, formato_artistas)
 
+
+
+# Grafico
+workbook  = writer.book
+chart = workbook.add_chart({'type': 'column'})
+chart.add_series({
+    'categories': '=Artistas!$A$2:$A$85',
+    'values':      '=Artistas!$B$2:$B$85'
+})
+
+hoja_artistas.insert_chart('D2', chart)
+
 writer.save()
+
 
 ###### SQL ######
 with sqlite3.connect("./data/bdd-artist.bdd") as conexion:
@@ -96,5 +109,6 @@ with sqlite3.connect("./data/bdd-artist.bdd") as conexion:
 sub_df.to_json("./data/artistas.json")
 sub_df.to_json("./data/artistas_tabla.json", orient = "table")
 
-
+# Bibliografia
+# https://xlsxwriter.readthedocs.io/example_pandas_chart.html
 
