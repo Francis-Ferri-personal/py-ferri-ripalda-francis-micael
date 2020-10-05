@@ -53,6 +53,12 @@
         li > p {
             background-color: violet;
         }
+        li > p.epn.uno {
+            background-color: green;
+        }
+        li > p.epn {
+            background-color: red;
+        }
 
     </style>
 </head>
@@ -68,10 +74,21 @@
     >Parrafo Dos</P>
     <P class="fondo-rojo">Parrafo Tres</P>
     <ul>
+        <li><p class="epn uno">Cero</p></li>
         <li>Uno</li>
         <li><p>Dos</p></li>
         <li>Tres</li>
+        <li><p class="epn">Cuatro</p></li>
     </ul>
     <li><p>Fuera de UL</p></li>
 </body>
 </html>
+
+<!-- scrapy bench nos ayuda a saber  que caracteristicas contiene nuestro compuutador (caracteristicas de performance)
+ -->
+ <!-- scrapy view https://www.ecuavisa.com/  -->
+ <!-- type(response.css('div')) -->
+ <!-- response.css('title').extract()  -->
+ <!-- response.css('title::text').extract() -->
+<!-- len(response.css('.tags .tag::text').extract()) -->
+<!-- len(response.css('div.tags > a.tag::text').extract()) -->
