@@ -23,7 +23,6 @@ class ProductoFybeca(scrapy.Item):
         ),
         output_processor = TakeFirst()  # Otenemos una lista []
                                         # Sacamos el primero de la lista
-        
     )
 
 
